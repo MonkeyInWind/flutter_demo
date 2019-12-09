@@ -6,7 +6,7 @@ class Page3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('page1')
+            title: Text('page3')
         ),
         body: Stack(
           children: <Widget>[
