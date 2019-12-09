@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/page5.dart';
 
 class Page4 extends StatelessWidget {
   @override
@@ -56,7 +57,16 @@ class Page4 extends StatelessWidget {
             )
           )
         ],
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.fast_forward),
+        onPressed: () {
+          Navigator.push(
+            context,
+            new MaterialPageRoute(builder: (context) => Page5()),
+          );
+        }
+      ),
     );
   }
 }
