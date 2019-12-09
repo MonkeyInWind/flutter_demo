@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/page3.dart';
 
 class Page2 extends StatelessWidget {
   @override
@@ -16,7 +17,17 @@ class Page2 extends StatelessWidget {
             Navigator.pop(context);
           }
         )
-      )
+      ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print('pressed next page');
+            Navigator.push(
+              context,
+              new MaterialPageRoute(builder: (context) => Page3()),
+            );
+          },
+          child: new Icon(Icons.arrow_forward),
+        )
     );
   }
 }
