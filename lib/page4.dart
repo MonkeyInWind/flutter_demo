@@ -59,7 +59,7 @@ class Page4 extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.fast_forward),
+        child: Icon(Icons.arrow_forward),
         onPressed: () {
           Navigator.push(
             context,
