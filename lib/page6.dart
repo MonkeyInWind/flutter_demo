@@ -7,18 +7,16 @@ class Page6 extends StatelessWidget {
       appBar: AppBar(
         title: Text('page6'),
       ),
-      body: ListView(
-        physics: NeverScrollableScrollPhysics(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Center (
-            child: Container(
-              width: 200,
-              height: 200,
-              color: Colors.red,
-              margin: EdgeInsets.only(
-                top: 20,
-                bottom: 20
-              ),
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.red,
+            margin: EdgeInsets.only(
+              top: 20,
+              bottom: 20
             ),
           ),
           Row (
