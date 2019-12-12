@@ -18,6 +18,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool logged = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold (
@@ -25,19 +27,25 @@ class _HomePageState extends State<HomePage> {
         title: Text('Login')
       ),
       body: Center (
-        child: RaisedButton(
-          child: Text('Login'),
-          color: Colors.blue,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                fullscreenDialog: true,
-                builder: (context) => Login()
-              )
-            );
-          }
-        )
+        child: logged ? Image.asset('./images/logo.png')
+            :
+          RaisedButton(
+            child: Text('Login'),
+            color: Colors.blue,
+            onPressed: () async {
+              var result = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  fullscreenDialog: true,
+                  builder: (context) => Login()
+                )
+              );
+
+              setState(() {
+                logged = result;
+              });
+            }
+          )
       )
     );
   }
