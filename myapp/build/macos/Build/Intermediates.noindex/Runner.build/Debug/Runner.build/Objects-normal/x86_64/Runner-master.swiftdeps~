@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
+options: "2f6dfa961c5b17ab3e1c1aa395167bd8"
+build_time: [1576593362, 906549000]
+inputs:
+  "/Users/dasheng/Personal/Practice/flutter/flutter_demo/myapp/macos/Runner/MainFlutterWindow.swift": [1571544722, 305710144]
+  "/Users/dasheng/Personal/Practice/flutter/flutter_demo/myapp/macos/Runner/AppDelegate.swift": [1571544722, 301309900]
+  "/Users/dasheng/Personal/Practice/flutter/flutter_demo/myapp/macos/Flutter/GeneratedPluginRegistrant.swift": [1576593349, 316621138]

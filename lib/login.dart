@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+import 'package:dio/dio.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -7,6 +7,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  Dio dio = new Dio();
   String username = '';
   String password = '';
 
@@ -61,24 +62,27 @@ class _LoginState extends State<Login> {
                   child: RaisedButton(
                     child: Text('Login'),
                     color: Colors.blue,
-                    onPressed: () {
+                    onPressed: () async {
                       String tip = '';
                       if (username == '') {
                         tip = 'username empty';
                       } else if (password == '') {
                         tip = 'password empty';
                       } else {
-                        setState(() {
-                          username = '';
-                          password = '';
-                        });
-                        Timer(
-                          Duration(seconds: 1),
-                          () {
-                            Navigator.pop(context, true);
-                          }
-                        );
-                        tip = 'success';
+                        try {
+                          Response res = await dio.post(
+                              'http://118.25.7.84:10086/login',
+                              data: {
+                                'username': username,
+                                'password': password
+                              }
+                          );
+                          print(res.data);
+                          tip = res.data;
+                        } catch (e) {
+                          print(e);
+                          tip = 'failed';
+                        }
                       }
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
