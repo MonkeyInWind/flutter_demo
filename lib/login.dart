@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'package:dio/dio.dart';
 
 class Login extends StatefulWidget {
@@ -79,6 +80,12 @@ class _LoginState extends State<Login> {
                           );
                           print(res.data);
                           tip = res.data;
+                          Timer(
+                            Duration(seconds: 1),
+                            () {
+                              Navigator.pop(context, true);
+                            }
+                          );
                         } catch (e) {
                           print(e);
                           tip = 'failed';
